@@ -1,0 +1,11 @@
+{
+  "name": "retenot",
+  "displayName": "Retenot",
+  "version": "2.0.0",
+  "description": "El Sobre de Retenot para escribanías de CABA y Provincia de Buenos Aires: lee las facturas y proformas de cada escritura, separa sellos, aportes e IVA de los honorarios, arma el tablero del mes y lo mantiene al día todos los días.",
+  "author": { "name": "Retenot", "email": "meoliagustina@gmail.com", "url": "https://retenot.com" },
+  "homepage": "https://retenot.com/instalar",
+  "repository": "https://github.com/agustinameoli/retenot",
+  "license": "SEE LICENSE IN LICENSE",
+  "keywords": ["escribania", "escribano", "sellos", "aportes", "iva", "agip", "arba", "argentina"]
+}
