@@ -1,0 +1,307 @@
+<title>El Sobre · Retenot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#EEF0F3;--surface:#FFFFFF;--surface-2:#F6F7F9;--ink:#111A2E;--muted:#4B5365;--line:#E3E6EC;--line-2:#D6DAE2;
+  --accent:#0F1B33;--accent-ink:#FFFFFF;--link:#2F5BD3;
+  --kraft:#D9B77F;--kraft-flap:#C9A266;--kraft-ink:#34250B;--kraft-muted:#5A4220;--kraft-line:rgba(52,37,11,.25);--seal:#A8492F;
+  --good:#1D7349;--good-bg:#E1F1E8;--warn:#A5301D;--warn-bg:#F8E3DE;--pend:#8A5A00;--pend-bg:#FBEFD3;
+  --side:#0F1B33;--side-2:#1D2C4D;--side-ink:#C9D1E3;
+  --shadow:0 1px 2px rgba(17,26,46,.06),0 12px 32px rgba(17,26,46,.08);
+  --f:"Geist",system-ui,-apple-system,"Segoe UI",sans-serif;--ease:cubic-bezier(.23,1,.32,1);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){color-scheme:dark;--bg:#0B111D;--surface:#141C2C;--surface-2:#1A2336;--ink:#E8ECF3;--muted:#A3ADC2;--line:#263047;--line-2:#323D57;--accent:#DCE3F2;--accent-ink:#0B111D;--link:#86A8FF;--side:#070C16;--side-2:#16223D;--side-ink:#AEB9D0;--kraft:#4A3A22;--kraft-flap:#5B472A;--kraft-ink:#F4E6C9;--kraft-muted:#CFB88F;--kraft-line:rgba(244,230,201,.16);--good:#63C796;--good-bg:#14301F;--warn:#F2907C;--warn-bg:#3A1C17;--pend:#E8B75C;--pend-bg:#33280F;--shadow:none}}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#0B111D;--surface:#141C2C;--surface-2:#1A2336;--ink:#E8ECF3;--muted:#A3ADC2;--line:#263047;--line-2:#323D57;--accent:#DCE3F2;--accent-ink:#0B111D;--link:#86A8FF;--side:#070C16;--side-2:#16223D;--side-ink:#AEB9D0;--kraft:#4A3A22;--kraft-flap:#5B472A;--kraft-ink:#F4E6C9;--kraft-muted:#CFB88F;--kraft-line:rgba(244,230,201,.16);--good:#63C796;--good-bg:#14301F;--warn:#F2907C;--warn-bg:#3A1C17;--pend:#E8B75C;--pend-bg:#33280F;--shadow:none}
+.o-AGIP{--c:#0E7C70;--ct:#0B6158;--cs:#E3F2EF}.o-ARBA{--c:#2F5BD3;--ct:#1F43A8;--cs:#E6ECFB}.o-Colegio{--c:#B02A6B;--ct:#8E1F55;--cs:#F8E5EE}.o-ARCA{--c:#6E45C9;--ct:#5431A6;--cs:#EEE8FA}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .o-AGIP{--c:#4FD1C0;--ct:#7FE0D3;--cs:rgba(79,209,192,.13)}:root:not([data-theme="light"]) .o-ARBA{--c:#86A8FF;--ct:#A9C0FF;--cs:rgba(134,168,255,.13)}:root:not([data-theme="light"]) .o-Colegio{--c:#F07AB0;--ct:#F6A2C8;--cs:rgba(240,122,176,.13)}:root:not([data-theme="light"]) .o-ARCA{--c:#B69AF5;--ct:#CDB8FA;--cs:rgba(182,154,245,.13)}}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 var(--f);-webkit-font-smoothing:antialiased;padding:0 16px 40px}
+.num{font-variant-numeric:tabular-nums}
+button{font:inherit;cursor:pointer;touch-action:manipulation}
+h1,h2{margin:0;letter-spacing:-.015em}
+.eyebrow{text-transform:uppercase;letter-spacing:.08em;font-size:12.5px;font-weight:600;color:var(--muted)}
+.muted{color:var(--muted)}.small{font-size:13.5px}
+.side{display:none}
+.wrap{max-width:1400px;margin:0 auto;display:flex;flex-direction:column;gap:20px;padding-top:18px}
+.mtop{display:flex;align-items:center;gap:12px}
+.env{width:34px;height:25px;border-radius:5px;background:var(--kraft);position:relative;overflow:hidden;flex:none}
+.env::before{content:"";position:absolute;inset:0 0 auto 0;height:13px;background:var(--kraft-flap);clip-path:polygon(0 0,100% 0,50% 100%)}
+.bn{font-weight:700;font-size:22px}
+.phead{display:flex;align-items:flex-end;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.mnav{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.mnav h1{font-size:clamp(24px,6.6vw,34px);font-weight:700;white-space:nowrap}
+.iconbtn{width:36px;height:36px;border-radius:9px;border:1px solid var(--line-2);background:var(--surface);color:var(--ink);display:inline-flex;align-items:center;justify-content:center;transition:transform 160ms var(--ease)}
+.iconbtn:active{transform:scale(.97)}.iconbtn:disabled{opacity:.4;cursor:default}
+.linkbtn{background:none;border:0;color:var(--link);font-weight:600;padding:4px 0;font-size:14px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:10px;padding:11px 16px;font-weight:600;background:var(--accent);color:var(--accent-ink);min-height:44px;transition:transform 160ms var(--ease)}
+.btn:active:not(:disabled){transform:scale(.97)}.btn:disabled{opacity:.55;cursor:default}
+.btn.ghost{background:var(--surface);color:var(--ink);border:1px solid var(--line-2)}
+.btn.kraft{background:var(--kraft-ink);color:#F4E3C1;width:100%}
+:focus-visible{outline:3px solid var(--link);outline-offset:2px}
+.fresh{font-size:13px;color:var(--muted);display:flex;align-items:center;gap:6px}
+.fresh i{width:7px;height:7px;border-radius:50%;background:#3FB27F}
+.row1{display:flex;flex-direction:column;gap:18px}
+.sobre{position:relative;background:var(--kraft);color:var(--kraft-ink);border-radius:16px;padding:62px 22px 22px;overflow:hidden;box-shadow:var(--shadow)}
+.sobre::before{content:"";position:absolute;inset:0 0 auto 0;height:52px;background:var(--kraft-flap);clip-path:polygon(0 0,100% 0,50% 100%)}
+.sobre::after{content:"";position:absolute;left:50%;top:36px;width:28px;height:28px;margin-left:-14px;border-radius:50%;background:var(--seal);box-shadow:inset 0 0 0 3px rgba(255,255,255,.18)}
+.sobre .eyebrow{color:var(--kraft-muted)}
+.sobre .big{font-size:44px;font-weight:700;letter-spacing:-.025em;line-height:1.05;margin-top:4px}
+.sobre .resta{margin-top:4px;font-weight:600}
+.sobre .note{color:var(--kraft-muted);font-size:13.5px;margin-top:6px}
+.pm{color:var(--good);font-weight:800;font-size:12px;margin-left:4px}
+.ledger{margin-top:18px;padding:16px;border-radius:12px;background:rgba(255,255,255,.38);display:flex;flex-direction:column;gap:10px}
+.lg{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.lg b{font-size:16px}.lg .v{font-weight:700;font-size:24px;white-space:nowrap}
+.lg.falta b,.lg.falta .v{color:var(--seal)}.lg.ok b,.lg.ok .v{color:var(--good)}
+.lgbar{height:8px;border-radius:99px;background:rgba(52,37,11,.14);overflow:hidden}.lgbar i{display:block;height:100%;background:var(--kraft-ink);border-radius:99px;transition:width 400ms var(--ease)}
+.lock{margin-top:16px;padding:14px;border-radius:12px;border:1px dashed var(--kraft-line);font-size:14px}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:16px}
+.comp{padding:20px;display:flex;flex-direction:column;gap:16px}
+.comp-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap}
+.comp-h h2{font-size:22px;font-weight:600}
+.stack{display:flex;gap:3px;height:18px;border-radius:7px;overflow:hidden;background:var(--surface-2)}.stack i{display:block;background:var(--c)}
+.tiles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+.tile{display:flex;flex-direction:column;gap:4px;padding:12px 14px;border-radius:12px;background:var(--cs);min-width:0}
+.tl{font-size:13px;font-weight:700;color:var(--ct);display:flex;align-items:center;gap:6px}.tl i{width:9px;height:9px;border-radius:3px;background:var(--c)}
+.tv{font-size:22px;font-weight:600;color:var(--ct);white-space:nowrap}
+.ts{font-size:13px;color:var(--ct)}
+.tf{margin-top:auto;padding-top:10px;display:flex;justify-content:space-between;align-items:center;gap:8px;flex-wrap:wrap;border-top:1px solid color-mix(in srgb,var(--c) 22%,transparent)}
+.tpay{all:unset;cursor:pointer;font-size:13.5px;font-weight:700;color:var(--ct);padding:4px 0}
+.tpay:focus-visible{outline:3px solid var(--link);border-radius:4px}
+.cuentas{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px 26px;padding-top:14px;border-top:1px solid var(--line)}
+.cta{display:flex;flex-direction:column;gap:2px;min-width:0}.cta .v{font-size:22px;font-weight:600}
+.cdot{width:10px;height:10px;border-radius:3px;display:inline-block;margin-right:6px}.cdot.fis{background:#2F5BD3}.cdot.dig{background:var(--good)}
+.alert{padding:14px 16px;border-radius:12px;background:var(--pend-bg);color:var(--pend);font-size:14px;display:flex;flex-direction:column;gap:6px}
+.alert b{color:var(--ink)}
+.escs-h{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;padding:16px 18px}
+.escs-h h2{font-size:22px;font-weight:600}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{border:0;border-radius:999px;padding:6px 12px;font-size:13px;font-weight:600;background:var(--surface-2);color:var(--muted);min-height:32px;transition:transform 160ms var(--ease)}
+.chip[aria-pressed="true"]{background:var(--accent);color:var(--accent-ink)}.chip:active{transform:scale(.97)}
+.tw{overflow-x:auto;border-top:1px solid var(--line)}
+table{border-collapse:collapse;width:100%;min-width:860px;font-size:14.5px}
+th{text-align:left;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600;padding:11px 12px;background:var(--surface-2);border-bottom:1px solid var(--line);white-space:nowrap}
+th.oc{color:var(--ct);box-shadow:inset 0 -3px 0 var(--c)}
+td{padding:12px;border-bottom:1px solid var(--line);vertical-align:top}
+th:first-child,td:first-child{padding-left:18px}th:last-child,td:last-child{padding-right:18px}
+.r{text-align:right}td.oc{color:var(--ct);font-weight:600}
+tfoot td{background:var(--surface-2);font-weight:700;border-top:2px solid var(--ink)}
+.z{color:var(--muted);font-weight:400}
+.who{font-weight:600}.sub{display:block;font-size:12.5px;color:var(--muted)}
+.st{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;padding:3px 9px;border-radius:999px;white-space:nowrap}
+.st.dig{background:var(--good-bg);color:var(--good)}.st.fis{background:#E6ECFB;color:#1F43A8}.st.rev{background:var(--pend-bg);color:var(--pend)}
+.mcards{display:flex;flex-direction:column;gap:10px;padding:0 12px 12px}
+.mcard{border:1px solid var(--line);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:8px}
+.mcard .top{display:flex;justify-content:space-between;gap:10px}.mcard .tot{font-size:19px;font-weight:600;white-space:nowrap}
+.minis{display:flex;flex-wrap:wrap;gap:6px}.mini{font-size:12.5px;font-weight:600;color:var(--ct);background:var(--cs);padding:3px 8px;border-radius:6px}
+.empty{padding:28px 20px;display:flex;flex-direction:column;gap:10px;align-items:flex-start}
+.state{max-width:560px;margin:60px auto;padding:28px;border-radius:16px;background:var(--surface);border:1px solid var(--line);display:flex;flex-direction:column;gap:12px}
+.state h2{font-size:22px}
+.overlay{position:fixed;inset:0;background:rgba(10,15,25,.45);z-index:20;display:flex;align-items:flex-end;justify-content:center}
+.sheet{background:var(--surface);width:100%;max-width:480px;border-radius:16px 16px 0 0;padding:20px 16px calc(20px + env(safe-area-inset-bottom,0px));display:flex;flex-direction:column;gap:14px}
+@media (min-width:600px){.overlay{align-items:center}.sheet{border-radius:16px}}
+.sheet h2{font-size:20px}
+.field{display:flex;flex-direction:column;gap:5px}.field label{font-size:13px;font-weight:600;color:var(--muted)}
+.money{position:relative}.money span{position:absolute;left:12px;top:50%;transform:translateY(-50%);color:var(--muted)}
+input{font:inherit;font-size:16px;color:var(--ink);background:var(--surface-2);border:1.5px solid var(--line);border-radius:9px;padding:11px 12px 11px 26px;width:100%;font-variant-numeric:tabular-nums}
+input.plain{padding-left:12px}
+.acts{display:flex;gap:8px;justify-content:flex-end;flex-wrap:wrap}
+.err{color:var(--warn);font-size:13.5px;font-weight:600}
+.toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:10px;font-size:14px;font-weight:600;z-index:40}
+@media (prefers-reduced-motion:no-preference){.sheet{animation:up 220ms var(--ease)}.overlay{animation:fade 150ms ease-out}.toast{animation:fade 200ms ease-out}@keyframes up{from{transform:translateY(16px);opacity:.6}}@keyframes fade{from{opacity:0}}}
+@media (min-width:600px){.tiles{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (min-width:900px){
+  body{padding:0 36px 40px 268px}
+  .wrap{margin:0;padding-top:28px}
+  .mtop{display:none}
+  .side{display:flex;flex-direction:column;gap:26px;position:fixed;left:0;top:0;bottom:0;width:232px;padding:28px 18px;background:var(--side);color:var(--side-ink);z-index:6}
+  .side .bn{color:#fff}.side .bs{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#A9B3CA;margin-top:4px}
+  .brand{display:flex;align-items:center;gap:12px;padding:0 6px}
+  .cuenta{display:flex;flex-direction:column;gap:3px;padding:10px 12px;border-radius:10px;background:var(--side-2);font-size:13.5px}
+  .cuenta .lt{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:#A9B3CA}.cuenta strong{color:#fff;font-weight:600}
+  .legend{display:flex;flex-direction:column;gap:10px;padding:0 6px;font-size:13.5px}
+  .legend .lt{font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;color:#9AA5BE}
+  .legend span:not(.lt){display:flex;align-items:center;gap:10px}.legend i{width:10px;height:10px;border-radius:3px;background:var(--c)}
+  .side .foot{margin-top:auto;font-size:12.5px;color:#8C97B0;padding:0 6px}
+  .row1{display:grid;grid-template-columns:minmax(320px,420px) minmax(0,1fr);gap:20px;align-items:stretch}
+  .mcards{display:none}
+}
+@media (max-width:899px){.tw.desk{display:none}}
+</style>
+
+<aside class="side" aria-label="Retenot">
+  <div class="brand"><span class="env" aria-hidden="true"></span><span><span class="bn">El Sobre</span><span class="bs" id="s-esc">Retenot</span></span></div>
+  <div class="cuenta" id="s-cta" hidden><span class="lt">Sobre digital</span><strong id="s-cta-n"></strong></div>
+  <div class="legend"><span class="lt">Liquidaciones</span>
+    <span class="o-AGIP"><i></i>Sellos CABA · AGIP</span><span class="o-ARBA"><i></i>Sellos y ap. Pcia. · ARBA</span><span class="o-Colegio"><i></i>Aportes CABA · Colegio</span><span class="o-ARCA"><i></i>IVA · ARCA</span>
+  </div>
+  <div class="foot">Retenot · los datos se actualizan solos cada vez que entran escrituras nuevas.</div>
+</aside>
+<main class="wrap" id="app"><div class="state"><h2>Abriendo el sobre…</h2><p class="muted">Conectando con Retenot.</p></div></main>
+<div id="sheet-root"></div><div id="toast-root"></div>
+
+<script>
+(function(){
+const SERVER = 'Retenot';
+const ORGS = [
+  {k:'AGIP', label:'Sellos CABA', org:'AGIP'},
+  {k:'ARBA', label:'Sellos y aportes Provincia', org:'ARBA'},
+  {k:'Colegio', label:'Aportes y derechos CABA', org:'Colegio de Escribanos'},
+  {k:'ARCA', label:'IVA', org:'ARCA'},
+];
+const $ = (s) => document.querySelector(s);
+const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const money = (n) => '$ ' + Math.round(+n || 0).toLocaleString('es-AR');
+const amt = (n) => n ? money(n) : '<span class="z">–</span>';
+const ddmm = (iso) => iso ? iso.slice(8, 10) + '/' + iso.slice(5, 7) : '';
+const mesHoy = () => new Date(Date.now() - 3 * 3600e3).toISOString().slice(0, 7);
+function mesLabel(ym){ const [y, m] = ym.split('-').map(Number); const s = new Date(y, m - 1, 15).toLocaleDateString('es-AR', {month:'long', year:'numeric'}); return s[0].toUpperCase() + s.slice(1); }
+function mover(ym, d){ let [y, m] = ym.split('-').map(Number); m += d; if (m < 1) { m = 12; y--; } if (m > 12) { m = 1; y++; } return y + '-' + String(m).padStart(2, '0'); }
+function parseMoney(s){ s = String(s || '').replace(/[$\s]/g, ''); if (!s) return NaN; if (s.includes(',')) s = s.replace(/\./g, '').replace(',', '.'); else if (/\.\d{3}(\.|$)/.test(s)) s = s.replace(/\./g, ''); return Math.round(parseFloat(s) * 100) / 100; }
+
+let mcp = null, mes = mesHoy(), data = null, unwatch = null, filtro = 'todas', storedAt = null, lastErr = null;
+
+function toast(t){ const r = $('#toast-root'); r.innerHTML = `<div class="toast" role="status">${esc(t)}</div>`; clearTimeout(toast.t); toast.t = setTimeout(() => { r.innerHTML = ''; }, 2600); }
+
+function stateView(title, body, extra){ $('#app').innerHTML = `<div class="state"><h2>${esc(title)}</h2><p class="muted">${body}</p>${extra || ''}</div>`; }
+
+function onError(e){
+  const code = e && e.code;
+  lastErr = code;
+  if (code === 'server_not_connected' || code === 'selection_required') return stateView('Falta conectar Retenot', 'Agregá el conector <b>Retenot</b> en Claude: Configuración → Conectores. Después volvé a abrir esta página.');
+  if (code === 'needs_reauth') return stateView('Volvé a entrar a Retenot', 'La sesión de Retenot venció. Entrá en Claude → Configuración → Conectores → Retenot y tocá Conectar.');
+  if (code === 'not_in_manifest' || code === 'not_granted' || code === 'consent_required') return stateView('Esta página necesita permiso', 'Para mostrar tu sobre, la página tiene que poder leer Retenot. Volvé a abrirla y tocá <b>Permitir</b> cuando Claude lo pregunte.');
+  if (code === 'blocked_by_policy' || code === 'approval_required') return stateView('Tu organización no permite esta conexión', 'Pedile a quien administra tu cuenta de Claude que habilite el conector Retenot para páginas.');
+  if (data) { toast('No pude actualizar: muestro lo último que tengo.'); return; }
+  stateView('No pude abrir el sobre', 'Retenot no respondió. Probá de nuevo en un rato.', '<button class="btn" type="button" id="retry">Reintentar</button>');
+  const b = $('#retry'); if (b) b.onclick = () => watch();
+}
+
+function watch(){
+  if (unwatch) unwatch();
+  unwatch = mcp.watchTool(SERVER, 'tablero_mes', { mes }, (ev) => {
+    if (ev.type === 'error') return onError(ev.error);
+    const p = ev.result && (ev.result.payload ?? ev.result.structuredContent);
+    if (p && typeof p === 'object' && p.kind === 'tablero') { data = p; storedAt = ev.result.cache ? ev.result.cache.storedAt : Date.now(); render(); }
+    else if (typeof p === 'string') stateView('Retenot dice:', esc(p));
+  }, { refetchInterval: 5 * 60e3 });
+}
+
+async function act(tool, input, okMsg){
+  try {
+    await mcp.callTool(SERVER, tool, input);
+    toast(okMsg);
+    try { await mcp.invalidate(SERVER, 'tablero_mes'); } catch (e) { watch(); }
+    return true;
+  } catch (e) {
+    toast(e && e.code === 'tool_error' ? (e.message || 'Retenot no pudo hacerlo.') : 'No se pudo: probá de nuevo.');
+    return false;
+  }
+}
+
+function render(){
+  const d = data; if (!d) return;
+  if (d.bloqueado === 'pago') { stateView('Retenot está en pausa', esc(d.mensaje || 'Tu prueba terminó. Lo que cargaste está guardado.'), /^https:\/\//.test(d.link || '') ? `<a class="btn" href="${esc(d.link)}" target="_blank" rel="noopener">Elegir un plan</a>` : ''); return; }
+  if (d.bloqueado === 'historial') return stateView(mesLabel(mes), 'Los meses anteriores se ven en el plan Completo. Pedile a Claude “mi cuenta de Retenot” para pasarte.', '<button class="btn ghost" type="button" id="hoy">Volver al mes actual</button>'), ($('#hoy').onclick = () => { mes = mesHoy(); watch(); });
+  $('#s-esc').textContent = d.escribania || 'Retenot';
+  if (d.cuenta) { $('#s-cta').hidden = false; $('#s-cta-n').textContent = d.cuenta; }
+  const por = Object.fromEntries((d.por_organismo || []).map((o) => [o.organismo, o]));
+  const total = d.total || 0, dig = d.total_digital || 0, fis = d.total_fisico || 0, pag = d.pagado || 0, pend = d.digital_pendiente || 0;
+  const hay = d.saldo ? d.saldo.hay : null;
+  const pct = pend > 0 && hay != null ? Math.min(100, Math.round(hay / pend * 100)) : (hay != null ? 100 : 0);
+  const fresh = storedAt ? new Date(storedAt).toLocaleTimeString('es-AR', {hour:'2-digit', minute:'2-digit'}) : '';
+  const revisar = (d.revisar || []), pendientes = (d.pendientes || []);
+  const prueba = d.motivo === 'prueba' && d.dias_prueba != null && d.dias_prueba <= 5 ? `<div class="alert"><b>Te quedan ${d.dias_prueba} día${d.dias_prueba === 1 ? '' : 's'} de prueba.</b> Pedile a Claude “mi cuenta de Retenot” para elegir un plan y que el sobre siga andando.</div>` : '';
+  const escs = (d.escrituras || []).filter((e) => filtro === 'todas' || (filtro === 'revisar' ? e.revisar && e.revisar.length : e.sobre === filtro));
+  const fila = (e) => `<tr><td class="num">${esc(e.numero)}</td><td><span class="who">${esc(e.cliente || e.detalle || '—')}</span><span class="sub">${esc([e.acto, e.jurisdiccion, e.fecha ? ddmm(e.fecha) : ''].filter(Boolean).join(' · '))}</span></td>${ORGS.map((o) => `<td class="r num oc o-${o.k}">${amt(e.por_organismo[o.k])}</td>`).join('')}<td class="r num"><b>${money(e.total)}</b></td><td>${e.revisar && e.revisar.length ? '<span class="st rev">Revisar</span> ' : ''}<button class="st ${e.sobre === 'fisico' ? 'fis' : 'dig'}" type="button" data-sobre="${esc(e.numero)}" title="Cambiar de sobre" style="border:0;cursor:pointer">${e.sobre === 'fisico' ? 'Sobre físico' : 'Sobre digital'}</button></td></tr>`;
+  const card = (e) => `<div class="mcard"><div class="top"><div><span class="who">${esc(e.numero)} · ${esc(e.cliente || e.detalle || '—')}</span><span class="sub">${esc([e.acto, e.jurisdiccion, e.fecha ? ddmm(e.fecha) : ''].filter(Boolean).join(' · '))}</span></div><span class="tot num">${money(e.total)}</span></div><div class="minis">${ORGS.filter((o) => e.por_organismo[o.k]).map((o) => `<span class="mini o-${o.k} num">${o.k} ${money(e.por_organismo[o.k])}</span>`).join('')}</div><div><button class="st ${e.sobre === 'fisico' ? 'fis' : 'dig'}" type="button" data-sobre="${esc(e.numero)}" style="border:0;cursor:pointer">${e.sobre === 'fisico' ? 'Sobre físico' : 'Sobre digital'}</button>${e.revisar && e.revisar.length ? ' <span class="st rev">Revisar</span>' : ''}</div></div>`;
+  const tot = (k) => (por[k] ? por[k].monto : 0);
+  $('#app').innerHTML = `
+  <div class="mtop"><span class="env" aria-hidden="true"></span><div><span class="bn">El Sobre</span><span class="sub">${esc(d.escribania || '')}${d.cuenta ? ' · ' + esc(d.cuenta) : ''}</span></div></div>
+  <div class="phead">
+    <div><span class="eyebrow">Período</span>
+      <div class="mnav"><button class="iconbtn" type="button" id="prev" aria-label="Mes anterior">‹</button><h1>${esc(mesLabel(mes))}</h1><button class="iconbtn" type="button" id="next" aria-label="Mes siguiente" ${mes >= mesHoy() ? 'disabled' : ''}>›</button>${mes !== mesHoy() ? '<button class="linkbtn" type="button" id="hoy">Ir al mes actual</button>' : ''}</div></div>
+    <div class="fresh">${fresh ? `<i></i>Actualizado ${fresh}` : ''}${d.ultima_revision ? ` · última lectura de la carpeta ${new Date(d.ultima_revision).toLocaleDateString('es-AR', {day:'2-digit', month:'2-digit'})} ${new Date(d.ultima_revision).toLocaleTimeString('es-AR', {hour:'2-digit', minute:'2-digit'})}` : ''}</div>
+  </div>
+  ${prueba}
+  <div class="row1">
+    <section class="sobre" aria-label="Sobre digital">
+      <div class="eyebrow">Tiene que haber en el sobre digital</div>
+      <div class="big num">${money(pend)}</div>
+      ${pag ? `<div class="resta num">${money(dig)} en total − ${money(pag)} ya pagado<span class="pm">(P)</span></div>` : ''}
+      <div class="note">${(d.escrituras || []).filter((e) => e.sobre !== 'fisico').map((e) => esc((e.cliente || e.detalle || 'Esc.').split(' / ')[0]) + ' (esc. ' + esc(e.numero) + ')').join(', ') || 'Todavía no hay escrituras en el sobre digital este mes.'}</div>
+      ${d.completo ? (hay != null ? `
+      <div class="ledger">
+        <div class="lg"><div><b>Hay hoy</b><div class="small" style="color:var(--kraft-muted)">${esc(d.cuenta || 'en el sobre digital')}</div></div><span class="v num">${money(hay)}</span></div>
+        <div class="lgbar"><i style="width:${pct}%"></i></div>
+        ${d.saldo.estado === 'falta' ? `<div class="lg falta"><b>Faltan</b><span class="v num">${money(-d.saldo.diferencia)}</span></div>` : d.saldo.estado === 'sobra' ? `<div class="lg ok"><b>Sobran</b><span class="v num">${money(d.saldo.diferencia)}</span></div>` : '<div class="lg ok"><b>Está justo</b><span class="v">✓</span></div>'}
+      </div>` : '') + `<div style="margin-top:16px"><button class="btn kraft" type="button" id="saldo">${hay != null ? 'Actualizar saldo' : 'Cargar cuánto hay hoy'}</button></div>`
+      : `<div class="lock">Para comparar con lo que hay en ${esc(d.cuenta || 'la cuenta')} y ver si falta o sobra, pasate al plan Completo: pedile a Claude “mi cuenta de Retenot”.</div>`}
+    </section>
+    <section class="panel comp" aria-label="Por organismo">
+      <div class="comp-h"><h2>De qué está hecho ${esc(mesLabel(mes).split(' ')[0].toLowerCase())}</h2><span class="small muted">cada color es una liquidación distinta</span></div>
+      <div class="stack" aria-hidden="true">${ORGS.filter((o) => tot(o.k) > 0).map((o) => `<i class="o-${o.k}" style="flex:${tot(o.k)}"></i>`).join('') || '<i style="flex:1;background:var(--line)"></i>'}</div>
+      <div class="tiles">${ORGS.map((o) => { const x = por[o.k] || { monto: 0, pagado: 0, resta: 0, vence: null }; const n = (d.escrituras || []).filter((e) => e.por_organismo[o.k]).length; return `<div class="tile o-${o.k}"><span class="tl"><i></i>${o.label}</span><span class="tv num">${money(x.monto)}</span><span class="ts">${o.org} · ${n} escritura${n === 1 ? '' : 's'}</span><div class="tf">${x.pagado ? `<span class="ts num">Pagado ${money(x.pagado)}<span class="pm">(P)</span></span>` : `<span class="ts" style="font-weight:600">${x.vence ? 'vence ' + ddmm(x.vence.fecha) : ''}</span>`}${x.resta > 0 ? `<button class="tpay" type="button" data-pagar="${o.k}">Registrar pago</button>` : ''}</div></div>`; }).join('')}</div>
+      <div class="cuentas">
+        <div class="cta"><span class="eyebrow"><span class="cdot fis"></span>Sobres físicos</span><span class="v num">${money(fis)}</span><span class="small muted">${(d.escrituras || []).filter((e) => e.sobre === 'fisico').length} escrituras en efectivo</span></div>
+        <div class="cta"><span class="eyebrow"><span class="cdot dig"></span>Sobre digital</span><span class="v num">${money(dig)}</span><span class="small muted">${pag ? 'ya se pagó ' + money(pag) : 'sin pagos registrados'}</span></div>
+      </div>
+    </section>
+  </div>
+  ${revisar.length || pendientes.length ? `<div class="alert">${revisar.length ? `<div><b>Para revisar:</b> ${revisar.map((r) => 'esc. ' + esc(r.numero) + ' (' + esc(r.renglones.join(', ')) + ')').join('; ')}. Pedile a Claude que te muestre esos renglones.</div>` : ''}${pendientes.length ? `<div><b>No se pudieron cargar:</b> ${pendientes.map((p) => 'esc. ' + esc(p.numero) + (p.nombre ? ' ' + esc(p.nombre) : '') + ' — ' + esc(p.motivo)).join('; ')}.</div>` : ''}</div>` : ''}
+  <section class="panel" aria-label="Escrituras">
+    <div class="escs-h"><h2>Escrituras de ${esc(mesLabel(mes).split(' ')[0].toLowerCase())}</h2>
+      <div class="chips" role="group" aria-label="Filtrar">${[['todas', 'Todas'], ['digital', 'Sobre digital'], ['fisico', 'Sobre físico'], ['revisar', 'Para revisar']].map(([k, t]) => `<button class="chip" type="button" data-f="${k}" aria-pressed="${filtro === k}">${t}</button>`).join('')}</div></div>
+    ${escs.length ? `<div class="tw desk"><table><thead><tr><th>N°</th><th>Partes</th>${ORGS.map((o) => `<th class="r oc o-${o.k}">${o.k === 'Colegio' ? 'Colegio' : o.label.replace('Sellos y aportes Provincia', 'Sellos y ap. Pcia.')}<span class="sub" style="text-transform:none;letter-spacing:0">${o.k === 'Colegio' ? 'aportes' : o.org}</span></th>`).join('')}<th class="r">Total</th><th>Sobre</th></tr></thead><tbody>${escs.map(fila).join('')}</tbody>
+      <tfoot><tr><td></td><td>${escs.length} escritura${escs.length === 1 ? '' : 's'}</td>${ORGS.map((o) => `<td class="r num oc o-${o.k}">${amt(escs.reduce((s, e) => s + (e.por_organismo[o.k] || 0), 0))}</td>`).join('')}<td class="r num">${money(escs.reduce((s, e) => s + e.total, 0))}</td><td></td></tr></tfoot></table></div>
+      <div class="mcards">${escs.map(card).join('')}</div>` : `<div class="empty"><b>${filtro === 'todas' ? 'Todavía no entraron escrituras este mes.' : 'Nada en este filtro.'}</b><span class="muted small">${filtro === 'todas' ? 'Retenot revisa tu carpeta todos los días y las carga solo. También podés pasarle una factura a Claude.' : ''}</span></div>`}
+  </section>`;
+  $('#prev').onclick = () => { mes = mover(mes, -1); data = null; stateView(mesLabel(mes), 'Abriendo…'); watch(); };
+  const nx = $('#next'); if (nx) nx.onclick = () => { mes = mover(mes, 1); data = null; watch(); };
+  const h = $('#hoy'); if (h) h.onclick = () => { mes = mesHoy(); data = null; watch(); };
+  document.querySelectorAll('[data-f]').forEach((b) => b.onclick = () => { filtro = b.dataset.f; render(); });
+  document.querySelectorAll('[data-pagar]').forEach((b) => b.onclick = () => pagarSheet(b.dataset.pagar));
+  document.querySelectorAll('[data-sobre]').forEach((b) => b.onclick = () => sobreSheet(b.dataset.sobre));
+  const sb = $('#saldo'); if (sb) sb.onclick = saldoSheet;
+}
+
+function sheet(html, onOk){
+  const root = $('#sheet-root');
+  root.innerHTML = `<div class="overlay" id="ov"><div class="sheet" role="dialog" aria-modal="true">${html}<p class="err" id="err" hidden></p><div class="acts"><button class="btn ghost" type="button" id="cancel">Cancelar</button><button class="btn" type="button" id="ok">Guardar</button></div></div></div>`;
+  const close = () => { root.innerHTML = ''; };
+  $('#cancel').onclick = close; $('#ov').onclick = (e) => { if (e.target.id === 'ov') close(); };
+  document.addEventListener('keydown', function k(e){ if (e.key === 'Escape') { close(); document.removeEventListener('keydown', k); } });
+  const inp = root.querySelector('input'); if (inp && matchMedia('(pointer:fine)').matches) inp.focus();
+  $('#ok').onclick = async () => { const b = $('#ok'); b.disabled = true; const r = await onOk(); if (r === true) close(); else { b.disabled = false; if (typeof r === 'string') { const e = $('#err'); e.hidden = false; e.textContent = r; } } };
+}
+function pagarSheet(k){
+  const o = ORGS.find((x) => x.k === k), x = (data.por_organismo || []).find((p) => p.organismo === k) || {};
+  sheet(`<h2>Pago a ${esc(o.org)}</h2><p class="muted small">${esc(o.label)} de ${esc(mesLabel(mes))}. Lo que falta pagar: <b class="num">${money(x.resta)}</b>.</p>
+    <div class="field"><label for="m">Monto pagado</label><div class="money"><span>$</span><input id="m" inputmode="decimal" autocomplete="off" value="${Math.round(x.resta || 0).toLocaleString('es-AR')}"></div></div>
+    <div class="field"><label for="n">Nota (opcional)</label><input id="n" class="plain" placeholder="ej. 1ra quincena"></div>`, async () => {
+    const m = parseMoney($('#m').value); if (!(m > 0)) return 'Poné un monto mayor a cero.';
+    return act('registrar_pago', { organismo: k, monto: m, mes, nota: $('#n').value.trim() || undefined }, `Pago a ${o.org} registrado`);
+  });
+}
+function saldoSheet(){
+  sheet(`<h2>¿Cuánto hay hoy?</h2><p class="muted small">El saldo de ${esc(data.cuenta || 'el sobre digital')} hoy. Retenot lo compara con lo que tiene que haber.</p>
+    <div class="field"><label for="m">Saldo</label><div class="money"><span>$</span><input id="m" inputmode="decimal" autocomplete="off" value="${data.saldo ? Math.round(data.saldo.hay).toLocaleString('es-AR') : ''}"></div></div>`, async () => {
+    const m = parseMoney($('#m').value); if (!(m >= 0)) return 'Poné el saldo en pesos.';
+    return act('registrar_cuenta_aparte', { monto: m, mes }, 'Saldo actualizado');
+  });
+}
+function sobreSheet(num){
+  const e = (data.escrituras || []).find((x) => x.numero === num); if (!e) return;
+  const to = e.sobre === 'fisico' ? 'digital' : 'fisico';
+  sheet(`<h2>Escritura ${esc(num)}</h2><p class="muted">${esc(e.cliente || e.detalle || '')}</p><p>Hoy está en el <b>sobre ${e.sobre === 'fisico' ? 'físico' : 'digital'}</b>. ¿La pasás al sobre ${to === 'fisico' ? 'físico (efectivo)' : 'digital'}?</p>`, async () => act('marcar_sobre', { numero: num, sobre: to, mes }, `Escritura ${num} al sobre ${to === 'fisico' ? 'físico' : 'digital'}`));
+  $('#ok').textContent = to === 'fisico' ? 'Pasar a físico' : 'Pasar a digital';
+}
+
+(async () => {
+  mcp = window.claude && window.claude.use ? await window.claude.use('mcp') : null;
+  if (!mcp) return stateView('Abrí esta página en Claude', 'El sobre lee tus datos de Retenot. Se ve dentro de Claude, con el conector Retenot agregado.');
+  watch();
+})();
+})();
+</script>
