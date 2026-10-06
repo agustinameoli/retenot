@@ -21,5 +21,8 @@
     "arba",
     "argentina"
   ],
-  "privacyPolicyUrl": "https://retenot.com/privacidad"
+  "privacyPolicyUrl": "https://retenot.com/privacidad",
+  "supportUrl": "https://retenot.com/#contacto",
+  "documentationUrl": "https://retenot.com/instalar",
+  "termsOfServiceUrl": "https://retenot.com/terminos"
 }
