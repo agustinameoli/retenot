@@ -128,6 +128,14 @@ input.plain{padding-left:12px}
   .mcards{display:none}
 }
 @media (max-width:899px){.tw.desk{display:none}}
+.agenda .ag-l{list-style:none;margin:0;padding:0 22px 14px}
+.agenda .ag-l li{display:grid;grid-template-columns:64px 1fr auto;gap:12px;align-items:center;padding:11px 0;border-top:1px solid var(--line)}
+.agenda .ag-l li:first-child{border-top:0}
+.agenda .ag-d{font-weight:700}
+.agenda .ag-n{font-weight:600;display:flex;align-items:center;gap:8px;min-width:0}
+.agenda .ag-n i{flex:none;width:9px;height:9px;border-radius:3px;background:var(--c)}
+.agenda .ag-s{color:var(--muted);font-size:13px;white-space:nowrap}
+@media (max-width:600px){.agenda .ag-l{padding:0 16px 10px}.agenda .ag-l li{grid-template-columns:52px 1fr}.agenda .ag-s{grid-column:2}}
 </style>
 
 <aside class="side" aria-label="Retenot">
@@ -250,6 +258,7 @@ function render(){
     </section>
   </div>
   ${revisar.length || pendientes.length ? `<div class="alert">${revisar.length ? `<div><b>Para revisar:</b> ${revisar.map((r) => 'esc. ' + esc(r.numero) + ' (' + esc(r.renglones.join(', ')) + ')').join('; ')}. Pedile a Claude que te muestre esos renglones.</div>` : ''}${pendientes.length ? `<div><b>No se pudieron cargar:</b> ${pendientes.map((p) => 'esc. ' + esc(p.numero) + (p.nombre ? ' ' + esc(p.nombre) : '') + ' — ' + esc(p.motivo)).join('; ')}.</div>` : ''}</div>` : ''}
+  ${(d.agenda || []).length ? `<section class="panel agenda" aria-label="Próximos vencimientos"><div class="escs-h"><h2>Próximos vencimientos</h2><span class="small muted">${(d.agenda || []).some((v) => v.fuente === 'contador') ? 'del mail de tu contador' : 'calendario general'}</span></div><ul class="ag-l">${d.agenda.slice(0, 8).map((v) => { const o = ORGS.find((x) => x.k === v.organismo); return `<li class="${o ? 'o-' + o.k : ''}"><span class="ag-d num">${ddmm(v.fecha)}</span><span class="ag-n">${o ? '<i></i>' : ''}${esc(v.nombre)}${v.periodo ? ` <span class="sub" style="display:inline">${esc(v.periodo)}</span>` : ''}</span><span class="ag-s">${v.dias === 0 ? '<b class="st rev">Hoy</b>' : v.dias === 1 ? 'mañana' : 'en ' + v.dias + ' días'}${o ? ' · sale del sobre' : ''}</span></li>`; }).join('')}</ul></section>` : ''}
   <section class="panel" aria-label="Escrituras">
     <div class="escs-h"><h2>Escrituras de ${esc(mesLabel(mes).split(' ')[0].toLowerCase())}</h2>
       <div class="chips" role="group" aria-label="Filtrar">${[['todas', 'Todas'], ['digital', 'Sobre digital'], ['fisico', 'Sobre físico'], ['revisar', 'Para revisar']].map(([k, t]) => `<button class="chip" type="button" data-f="${k}" aria-pressed="${filtro === k}">${t}</button>`).join('')}</div></div>
