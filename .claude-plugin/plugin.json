@@ -1,8 +1,8 @@
 {
   "name": "retenot",
   "displayName": "Retenot",
-  "version": "2.0.0",
-  "description": "El Sobre de Retenot para escribanías de CABA y Provincia de Buenos Aires: lee las facturas y proformas de cada escritura, separa sellos, aportes e IVA de los honorarios, arma el tablero del mes y lo mantiene al día todos los días.",
+  "version": "2.1.0",
+  "description": "El Sobre de Retenot para escribanías de CABA y Provincia de Buenos Aires: lee las facturas y proformas de cada escritura, separa sellos, aportes e IVA de los honorarios, lee el mail del contador, agenda los vencimientos y te avisa al celular. Arma el tablero del mes y lo mantiene al día todos los días.",
   "author": {
     "name": "Retenot",
     "email": "meoliagustina@gmail.com",
