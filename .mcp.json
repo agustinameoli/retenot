@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "Retenot": {
+      "type": "http",
+      "url": "https://app.retenot.com/mcp"
+    }
+  }
+}
